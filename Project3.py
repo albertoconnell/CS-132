@@ -1,4 +1,4 @@
-
+from random import randint
 import time
 import board
 import neopixel
@@ -49,6 +49,7 @@ PURPLE = (110, 0, 110)
 WHITE = (110, 110, 110)
 YELLOW = (110, 110, 0)
 ORANGE = (170, 50, 0)
+RANDOM = (randint(0, 220), randint(0, 220), randint(0, 220))
 
 def A(quad, color):
     if(quad == 0 or quad == 80 or quad == 160 or quad == 240):
@@ -448,15 +449,19 @@ def S(quad, color):
 def T(quad, color):
     if(quad == 0 or quad == 80 or quad == 160 or quad == 240):
         for i in range(1, 8):
-            pixels[(i+quad + 7)] = (color)
+            pixels[(i+quad + 16)] = (color)
         pixels[(quad + 1)] = (color)
-        pixels[(quad + 17)] = (color)
+        pixels[(quad + 14)] = (color)
+        pixels[(quad + 30)] = (color)
+        pixels[(quad + 33)] = (color)
         pixels.show()
     else:
         for i in range(0, 7):
-            pixels[(i+quad + 9)] = (color)
+            pixels[(i+quad + 16)] = (color)
         pixels[(quad + 6)] = (color)
-        pixels[(quad + 22)] = (color)
+        pixels[(quad + 9)] = (color)
+        pixels[(quad + 25)] = (color)
+        pixels[(quad + 38)] = (color)
         pixels.show()
 def U(quad, color):
     if(quad == 0 or quad == 80 or quad == 160 or quad == 240):
@@ -538,16 +543,68 @@ def X(quad, color):
         pixels[(quad + 37)] = (color)
         pixels[(quad + 38)] = (color)
         pixels.show()
+def Y(quad, color):
+    if(quad == 0 or quad == 80 or quad == 160 or quad == 240):
+        for i in range(0, 5):
+            pixels[(quad + i + 19)] = (color)
+        pixels[(quad)] = (color)
+        pixels[(quad + 1)] = (color)
+        pixels[(quad + 13)] = (color)
+        pixels[(quad + 29)] = (color)
+        pixels[(quad + 32)] = (color)
+        pixels[(quad + 33)] = (color)
+        pixels.show()
+    else:
+        for i in range(0, 5):
+            pixels[(quad + i + 16)] = (color)
+        pixels[(quad + 26)] = (color)
+        pixels[(quad) + 6] = (color)
+        pixels[(quad) + 7] = (color)
+        pixels[(quad) + 10] = (color)
+        pixels[(quad + 38)] = (color)
+        pixels[(quad + 39)] = (color)
+        pixels.show()
+def Z(quad, color):
+    if(quad == 0 or quad == 80 or quad == 160 or quad == 240):
+        pixels[(quad + 2)] = (color)
+        pixels[(quad + 6)] = (color)
+        pixels[(quad + 7)] = (color)
+        pixels[(quad + 8)] = (color)
+        pixels[(quad + 10)] = (color)
+        pixels[(quad + 13)] = (color)
+        pixels[(quad + 18)] = (color)
+        pixels[(quad + 20)] = (color)
+        pixels[(quad + 23)] = (color)
+        pixels[(quad + 24)] = (color)
+        pixels[(quad + 28)] = (color)
+        pixels[(quad + 29)] = (color)
+        pixels.show()
+    else:
+        pixels[(quad)] = (color)
+        pixels[(quad + 1)] = (color)
+        pixels[(quad + 5)] = (color)
+        pixels[(quad + 10)] = (color)
+        pixels[(quad + 13)] = (color)
+        pixels[(quad + 15)] = (color)
+        pixels[(quad + 16)] = (color)
+        pixels[(quad + 19)] = (color)
+        pixels[(quad + 21)] = (color)
+        pixels[(quad + 26)] = (color)
+        pixels[(quad + 27)] = (color)
+        pixels[(quad + 31)] = (color)
+        pixels.show() 
 #MAIN
 
 
 
-A(quad2, RED)
-L(quad3, RED)
-B(quad4, RED)
-E(quad5, RED)
-R(quad6, RED)
-T(quad7, RED)
+A(quad0, RED)
+B(quad1, BLUE)
+C(quad2, GREEN)
+D(quad3, YELLOW)
+E(quad4, TEAL)
+F(quad5, ORANGE)
+G(quad6, PURPLE)
+H(quad7, WHITE)
 
 
 
