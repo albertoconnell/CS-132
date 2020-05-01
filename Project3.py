@@ -46,11 +46,13 @@ RED = (220, 0, 0)
 BLUE = (0, 0, 220)
 TEAL = (0, 110, 110)
 PURPLE = (110, 0, 110)
-WHITE = (110, 110, 110)
+WHITE = (80, 80, 80)
 YELLOW = (110, 110, 0)
 ORANGE = (170, 50, 0)
+CLEAR = (0, 0, 0)
 RANDOM = (randint(0, 220), randint(0, 220), randint(0, 220))
-
+def space(quad, color):
+    pixels[quad] = (CLEAR)
 def A(quad, color):
     if(quad == 0 or quad == 80 or quad == 160 or quad == 240):
         for i in range(2, 8):
@@ -140,21 +142,21 @@ def D(quad, color):
 def E(quad, color):
     if(quad == 0 or quad == 80 or quad == 160 or quad == 240):
         for i in range(1, 8):
-            pixels[(i+quad)] = (color)
-        pixels[(quad + 14)] = (color)
+            pixels[(i+quad+7)] = (color)
+        pixels[(quad + 24)] = (color)
         pixels[(quad + 17)] = (color)
-        pixels[(quad + 8)] = (color)
+        pixels[(quad + 27)] = (color)
         pixels[(quad + 23)] = (color)
-        pixels[(quad + 11)] = (color)
+        pixels[(quad + 30)] = (color)
         pixels[(quad + 20)] = (color)
         pixels.show()
     else:
         for i in range(0, 7):
-            pixels[(i+quad)] = (color)
-        pixels[(quad + 9)] = (color)
+            pixels[(i+quad+9)] = (color)
+        pixels[(quad + 25)] = (color)
         pixels[(quad + 22)] = (color)
-        pixels[(quad + 12)] = (color)
-        pixels[(quad + 15)] = (color)
+        pixels[(quad + 28)] = (color)
+        pixels[(quad + 31)] = (color)
         pixels[(quad + 19)] = (color)
         pixels[(quad + 16)] = (color)
         pixels.show()
@@ -329,22 +331,22 @@ def N(quad, color):
         pixels.show()
 def O(quad, color):
     if(quad == 0 or quad == 80 or quad == 160 or quad == 240):
-        for i in range(1, 7):
-            pixels[(i+quad)] = (color)
+        for i in range(1, 6):
+            pixels[(i+quad + 1)] = (color)
             pixels[(i+quad+24)] = (color)
         pixels[(quad + 8)] = (color)
-        pixels[(quad + 15)] = (color)
-        pixels[(quad + 16)] = (color)
+        pixels[(quad + 14)] = (color)
+        pixels[(quad + 17)] = (color)
         pixels[(quad + 23)] = (color)
         pixels.show()
     else:
-        for i in range(1, 7):
-            pixels[(i+quad)] = (color)
+        for i in range(2, 7):
+            pixels[(i+quad - 1)] = (color)
             pixels[(i + quad + 24)] = (color)
-        pixels[(quad + 8)] = (color)
+        pixels[(quad + 9)] = (color)
         pixels[(quad + 15)] = (color)
         pixels[(quad + 16)] = (color)
-        pixels[(quad + 23)] = (color)
+        pixels[(quad + 22)] = (color)
         pixels.show()
 def P(quad, color):
     if(quad == 0 or quad == 80 or quad == 160 or quad == 240):
@@ -597,14 +599,7 @@ def Z(quad, color):
 
 
 
-A(quad0, RED)
-B(quad1, BLUE)
-C(quad2, GREEN)
-D(quad3, YELLOW)
-E(quad4, TEAL)
-F(quad5, ORANGE)
-G(quad6, PURPLE)
-H(quad7, WHITE)
+
 
 
 
